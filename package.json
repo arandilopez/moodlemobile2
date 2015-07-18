@@ -46,7 +46,11 @@
     "ch.ti8m.documenthandler"
   ],
   "cordovaPlatforms": [
-    "android",
+    {
+      "platform": "android",
+      "version": "3.7.1",
+      "locator": "android@3.7.1"
+    },
     "ios"
   ]
 }
