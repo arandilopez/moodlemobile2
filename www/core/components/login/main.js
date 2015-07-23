@@ -51,7 +51,10 @@ angular.module('mm.core.login', [])
     .state('mm_login.site', {
         url: '/site',
         templateUrl: 'core/components/login/templates/site.html',
-        controller: 'mmLoginSiteCtrl'
+        controller: 'mmLoginSiteCtrl',
+        onEnter: function ($state) {
+          $state.go('mm_login.credentials', {siteurl: 'https://intranet.matematicas.uady.mx/enlinea2/'});
+        }
     })
 
     .state('mm_login.credentials', {
