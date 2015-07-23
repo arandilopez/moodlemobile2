@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.moodle.moodlemobile" version="2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Moodle Mobile</name>
-  <description>Official Moodle Mobile app</description>
+<widget id="mx.uady.matematicas.enlinea2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>EnLinea2 Móvil</name>
+  <description>Aplicación oficial de Moodle para EnLinea2</description>
   <author href="http://moodle.com" email="juan@moodle.com">Juan Leyva</author>
+  <author href="http://arandilopez.me" email="arandilopez.93@gmail.com">Arandi López</author>
   <content src="index.html"/>
   <access origin="*"/>
-
-  <allow-navigation href="cdvfile:*" />
-  <allow-navigation href="content:*" />
-  <allow-navigation href="data:*" />
-
-  <allow-intent href="*" />
-
+  <allow-navigation href="cdvfile:*"/>
+  <allow-navigation href="content:*"/>
+  <allow-navigation href="data:*"/>
+  <allow-intent href="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
