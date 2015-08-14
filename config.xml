@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="mx.uady.matematicas.enlinea2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>EnLinea2 Móvil</name>
+  <name>EnLinea2</name>
   <description>Aplicación oficial de Moodle para EnLinea2</description>
   <author href="http://moodle.com" email="juan@moodle.com">Juan Leyva</author>
   <author href="http://arandilopez.me" email="arandilopez.93@gmail.com">Arandi López</author>
@@ -16,6 +16,8 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="android-minSdkVersion" value="14"/>
+  <preference name="android-targetSdkVersion" value="21"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
