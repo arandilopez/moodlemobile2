@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="mx.uady.matematicas.enlinea2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="mx.uady.matematicas.enlinea2" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>EnLinea2</name>
-  <description>Aplicación oficial de Moodle para EnLinea2</description>
+  <description>Enlinea2 móvil simplifica el acceso a la plataforma educativa de FMAT-UADY.</description>
   <author href="http://moodle.com" email="juan@moodle.com">Juan Leyva</author>
   <author href="http://arandilopez.me" email="arandilopez.93@gmail.com">Arandi López</author>
   <content src="index.html"/>
