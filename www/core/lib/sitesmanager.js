@@ -39,8 +39,8 @@ angular.module('mm.core')
  * @name $mmSitesManager
  */
 .factory('$mmSitesManager', function($http, $q, $mmSitesFactory, md5, $mmLang, $mmConfig, $mmApp, $mmUtil, $mmEvents, $state,
-            $translate, mmCoreSitesStore, mmCoreCurrentSiteStore, mmCoreEventLogin, mmCoreEventLogout, $log, mmCoreEventSiteUpdated,
-            mmCoreEventSiteAdded, mmCoreEventSessionExpired) {
+            $translate, mmCoreSitesStore, mmCoreCurrentSiteStore, mmCoreEventLogin, mmCoreEventLogout, $log, $mmLocalNotifications,
+            mmCoreEventSiteUpdated, mmCoreEventSiteAdded, mmCoreEventSessionExpired, mmCoreEventSiteDeleted) {
 
     $log = $log.getInstance('$mmSitesManager');
 
@@ -129,7 +129,7 @@ angular.module('mm.core')
      */
     self.siteExists = function(siteurl) {
         // We pass fake parameters to make CORS work (without params, the script stops before allowing CORS).
-        return $http.head(siteurl + '/login/token.php?username=a&password=b&service=c', {timeout: 15000});
+        return $http.head(siteurl + '/login/token.php?username=a&password=b&service=c', {timeout: 30000});
     };
 
     /**
@@ -297,9 +297,7 @@ angular.module('mm.core')
      * @return {Object|Boolean} Object with error message to show and its params if info is not valid, true if info is valid.
      */
     function validateSiteInfo(infos) {
-        if (typeof infos.downloadfiles !== 'undefined' && infos.downloadfiles !== 1) {
-            return {error: 'mm.login.cannotdownloadfiles'};
-        } else if (!infos.firstname || !infos.lastname) {
+        if (!infos.firstname || !infos.lastname) {
             var moodleLink = '<a mm-browser href="' + infos.siteurl + '">' + infos.siteurl + '</a>';
             return {error: 'mm.core.requireduserdatamissing', params: {'$a': moodleLink}};
         }
@@ -400,6 +398,8 @@ angular.module('mm.core')
                 }, function() {
                     // DB remove shouldn't fail, but we'll go ahead even if it does.
                     return site.deleteFolder();
+                }).then(function() {
+                    $mmEvents.trigger(mmCoreEventSiteDeleted, site);
                 });
             });
         });
